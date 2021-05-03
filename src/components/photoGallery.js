@@ -4,6 +4,7 @@ import img2 from '../images/16.jpg'
 import img3 from '../images/3.jpg'
 import img4 from '../images/12.jpg'
 import img5 from '../images/14.jpg'
+
 import Spinner from 'react-bootstrap/Spinner'
 const obj = [
     { "url": img1, "title": "Nature", "name": "1" },
@@ -96,14 +97,16 @@ class PhotoGallery extends React.Component {
                             <div className="inner_overlay">
                                 <span className="close_icon" onClick={this.handleClose} >&times;</span>
                                 <img id="img_overlay" alt="" src={this.state.fullImage} />
+                                <div className="btnHeart" onClick={this.handleClose} ><i className="bi bi-heart" /></div>
                             </div>
                         </div>
 
                         {/* <span className="author_name">Author</span> */}
                         <img src={index.url} alt=" " className="image-responsive-gal" onClick={this.handleClick} />
                         <div className="overlay_text_label">
-                            <h5>{index.title}</h5><br />
-                            <button>Read more</button>
+                            <div> <span>{index.title}</span>
+                                {/* <div align="right" className="btnHeart"><i className="bi bi-heart" /></div> */}
+                            </div>
                         </div>
                     </div>
                 </div>

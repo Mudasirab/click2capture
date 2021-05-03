@@ -162,10 +162,10 @@
 }
 
 .image-responsive-gal:hover {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    /* filter: blur(2px);
-    -webkit-transition: 0.5s ease;
+    /* -webkit-transform: scale(1.5);
+    transform: scale(1.5); */
+    /* filter: blur(2px); */
+    /* -webkit-transition: 0.5s ease;
     transition: 0.5s ease; */
 }
 
@@ -180,6 +180,14 @@
     top: 82%;
     -webkit-transition: 0.5s ease;
     transition: 0.5s ease;
+}
+
+.btnHeart {
+    width: 78%;
+    /* display: inline-block; */
+    text-align: right;
+    font-size: xx-large;
+    margin-top: -46% !important;
 }
 
 .author_name {

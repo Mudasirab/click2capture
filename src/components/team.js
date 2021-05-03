@@ -11,9 +11,9 @@ class Team extends React.Component {
                 <Container>
                     <Row>
                         <Col xs={12} sm={6} md={3}>
-                            <div class="member" align="center">
+                            <div className="member" align="center">
 
-                                <img class="img-responsive" src="#" alt="" />
+                                <img className="img-responsive" src="#" alt="" />
 
                                 <h4><a href="#w">John Doe</a></h4>
 
@@ -21,9 +21,9 @@ class Team extends React.Component {
                             </div>
                         </Col>
                         <Col xs={12} sm={6} md={3}>
-                            <div class="member" align="center">
+                            <div className="member" align="center">
 
-                                <img class="img-responsive" src="#" alt="" />
+                                <img className="img-responsive" src="#" alt="" />
 
                                 <h4><a href="#W">John Doe</a></h4>
 
@@ -32,9 +32,9 @@ class Team extends React.Component {
                         </Col>
                         <Col xs={12} sm={6} md={3}>
 
-                            <div class="member" align="center">
+                            <div className="member" align="center">
 
-                                <img class="img-responsive" src="#" alt="" />
+                                <img className="img-responsive" src="#" alt="" />
 
                                 <h4><a href="#w">John Doe</a></h4>
 
@@ -42,9 +42,9 @@ class Team extends React.Component {
                             </div>
                         </Col>
                         <Col xs={12} sm={6} md={3}>
-                            <div class="member" align="center">
+                            <div className="member" align="center">
 
-                                <img class="img-responsive" src="#" alt="" />
+                                <img className="img-responsive" src="#" alt="" />
 
                                 <h4><a href="#w">John Doe</a></h4>
 

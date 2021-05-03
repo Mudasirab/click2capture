@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import backImg from '../../images/1.jpg'
 import MainContent from '../../containers/main'
+import { apiService } from '../../services'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {
 //     faGoogle,
@@ -34,10 +35,46 @@ const categories = [
 
 ]
 class Upload extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            file: [],
+            name: "",
+            email: "",
+            category: "",
+            title: ""
+        }
+    }
     handleChange = (e) => {
-        console.log("name and value ", e.target.value, e.target.name)
+        e.preventDefault();
+        this.setState({
+            ...this.state,
+            [e.target.name]: e.target.value,
+            // [`error_${e.target.name}`]: (e.target.value === '') ? `${e.target.name} is required` : ''
+        })
+    }
+    handleUploadChange = (e) => {
+        const data = e.target.files[0];
+        this.setState({
+
+            file: data
+        })
+
+    }
+    handleSubmit = async () => {
+        const imgFile = new FormData()
+        console.log("imgFile", imgFile)
+        imgFile.append('file', this.state.file.name)
+        const { name, email, category, title } = this.state;
+
+        console.log("formData", imgFile)
+        // const uploadedFile = await apiService.post('/upload', data)
+        // .then((res) => {
+        //     this.setState({ photos: [res.data, ...this.state.photos] });
+        // });
     }
     render() {
+        console.log("state", this.state)
         return (
             <MainContent {...this.props}>
                 <Container fluid>
@@ -50,11 +87,11 @@ class Upload extends React.Component {
 
                                 <Form.Group >
                                     <Form.Label>Your name</Form.Label>
-                                    <Form.Control className="inp_style" type="text" required placeholder="Name" />
+                                    <Form.Control className="inp_style" type="text" name="name" onChange={this.handleChange} required placeholder="Name" />
                                 </Form.Group>
                                 <Form.Group >
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control className="inp_style" type="email" required placeholder="example@gmail.com" />
+                                    <Form.Control className="inp_style" type="email" name="email" onChange={this.handleChange} required placeholder="example@gmail.com" />
                                 </Form.Group>
                                 <Form.Group controlId="exampleForm.SelectCustom">
                                     <Form.Label>Select category</Form.Label>
@@ -67,14 +104,14 @@ class Upload extends React.Component {
                                 </Form.Group>
                                 <Form.Group >
                                     <Form.Label>Title</Form.Label>
-                                    <Form.Control className="inp_style" type="text" required placeholder="Title" />
+                                    <Form.Control className="inp_style" type="text" name="title" onChange={this.handleChange} required placeholder="Title" />
                                 </Form.Group>
                                 <Form.File>
                                     <Form.File.Label>Select photo</Form.File.Label>
-                                    <Form.File.Input multiple className="inp_style" />
+                                    <Form.File.Input multiple className="inp_style" type="file" name="file" onChange={this.handleUploadChange} />
                                 </Form.File>
                                 <div align="center" className="form-group btn_top">
-                                    <Button className="btn_load btn_login">Submit
+                                    <Button className="btn_load btn_login" onClick={this.handleSubmit}>Submit
     </Button>
 
                                 </div>

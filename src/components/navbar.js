@@ -35,6 +35,7 @@ class NavBar extends React.Component {
                         <NavLink to="/contact" className="navLink_style">Contact</NavLink>
                         <NavLink to="/acc/ad_min/login" className="navLink_style">Login</NavLink>
                         <NavLink to="/uplad/upload-photos" className="navLink_style">Upload</NavLink>
+                        <NavLink to="/blog" className="navLink_style">Blog</NavLink>
                     </Nav>
 
                 </Navbar.Collapse>
